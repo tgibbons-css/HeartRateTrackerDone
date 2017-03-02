@@ -1,5 +1,6 @@
 package css.cis3334.heartratetracker;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

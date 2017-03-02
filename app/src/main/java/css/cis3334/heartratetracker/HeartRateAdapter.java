@@ -39,12 +39,18 @@ public class HeartRateAdapter  extends ArrayAdapter<HeartRate> {
         tvPulse.setText(hr.getPulse().toString());
         tvType.setText(hr.getRangeName());
 
-        if (hr.getRange()==1) {
+        if (hr.getRange()==0) {
             tvType.setTextColor(ContextCompat.getColor(context, R.color.colorZone1));
-        } else if (hr.getRange()==3) {
+        } else if (hr.getRange()==1) {
+            tvType.setTextColor(ContextCompat.getColor(context, R.color.colorZone2));
+        } else if (hr.getRange()==2) {
             tvType.setTextColor(ContextCompat.getColor(context, R.color.colorZone3));
-        } else if (hr.getRange()==5) {
+        } else if (hr.getRange()==3) {
+            tvType.setTextColor(ContextCompat.getColor(context, R.color.colorZone4));
+        } else if (hr.getRange()==4) {
             tvType.setTextColor(ContextCompat.getColor(context, R.color.colorZone5));
+        } else if (hr.getRange()==5) {
+            tvType.setTextColor(ContextCompat.getColor(context, R.color.colorZone6));
         }
 
 

@@ -1,5 +1,6 @@
 package css.cis3334.heartratetracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,11 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
         tvSelect = (TextView) findViewById(R.id.textViewSelect);
         lvHeartRates = (ListView) findViewById(R.id.listViewHeartRates);
-//        basicheartRateList = new ArrayList<HeartRate>();
-//        Random randGenerator = new Random();
-//        for (int i=0; i<20; i++) {
-//            basicheartRateList.add(new HeartRate( randGenerator.nextInt(180-110) + 110, 25));
-//        }
         heartRateList = new HeartRateList();
         heartRateList.InitRandomElderly();
 
@@ -45,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
                 HeartRate hr = (HeartRate) parent.getItemAtPosition(position);
+                Intent detailActIntent = new Intent(parent.getContext(), DetailActivity.class);
+                detailActIntent.putExtra("MainPulse", hr.getPulse());
+                detailActIntent.putExtra("MainHeartRate", hr);
+                startActivity(detailActIntent);
                 tvSelect.setText("You selected: " + hr.toString());
             }
         });

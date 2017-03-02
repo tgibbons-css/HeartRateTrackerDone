@@ -1,10 +1,12 @@
 package css.cis3334.heartratetracker;
 
+import java.io.Serializable;
+
 /**
  * Created by Tom Gibbons on 2/16/2017.
  */
 
-public class HeartRate {
+public class HeartRate implements Serializable {
     private Integer pulse;       // actual rate in beats per minute
     private Integer age;            // age when heart rate measurement was taken
     private Double maxHeartRate;    // calculated maximum rate based on age

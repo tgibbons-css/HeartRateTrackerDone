@@ -53,8 +53,6 @@ public class HeartRateAdapter  extends ArrayAdapter<HeartRate> {
             tvType.setTextColor(ContextCompat.getColor(context, R.color.colorZone6));
         }
 
-
-
         tvDescription.setText(hr.getRangeDescrtiption());
 
         return(view);
